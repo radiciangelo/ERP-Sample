@@ -1,0 +1,4 @@
+﻿USE [ERP_Sample]
+GO
+INSERT [dbo].[Users] ([Id], [EmployeeId], [PasswordHash], [SaltKey], [LastLogInOn], [InValidLogInAttemps], [Status], [RefreshToken], [RefreshTokenExpiryTime], [IsSuperUser], [CreatedBy], [CreatedOn], [ModifiedOn], [ModifiedBy], [IsDeleted]) VALUES (N'81bda57f-1d61-4682-82ad-efacdc14d18f', N'2bd0bf36-247f-4770-bb08-e6553a809897', N'B8FDEFC0DE085E67A6442CB676CA62863F95CF3B91FE5FE7AA134CFBF3650F95', N'UACrRHA=', CAST(N'2026-01-05T15:59:04.3459676+00:00' AS DateTimeOffset), 0, 1, N'jsfUn0WK++nKwqJRomWw45mE9byu99SfJphN+ygc4Bvv4ABSF0ThCAX4hEbZmHxu5/n1biO40YviQoQ9geXvsQ==', CAST(N'2026-01-10T16:59:04.3589116+01:00' AS DateTimeOffset), 0, N'00000000-0000-0000-0000-000000000000', CAST(N'2026-01-05T14:22:04.7980479+00:00' AS DateTimeOffset), CAST(N'2026-01-05T15:07:39.8306592+00:00' AS DateTimeOffset), N'00000000-0000-0000-0000-000000000000', 0)
+GO

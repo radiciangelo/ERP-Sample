@@ -14,7 +14,11 @@ namespace ERP.WebApi.Core
 
         public Guid GetCurrentEmployeeId()
         {
-            return Guid.Parse(User.Claims.First(x => x.Type == "nameid").Value);
+            if (User.Claims.Any())
+            {
+                return Guid.Parse(User.Claims.First(x => x.Type == "nameid").Value);
+            }
+            return Guid.Empty;
         }
     }
 }

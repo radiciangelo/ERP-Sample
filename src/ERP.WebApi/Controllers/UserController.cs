@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ERP.WebApi.Controllers
 {
+    //[AllowAnonymous]
     [Route("[controller]/[action]")]
     public class UserController : BaseController
     {

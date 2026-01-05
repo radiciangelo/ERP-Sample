@@ -1,13 +1,12 @@
-using System.Reflection;
+using ERP.Application.Modules.Employees.Commands;
 using ERP.Domain.Core.Repositories;
 using ERP.Domain.Core.Services;
-using ERP.Application.Modules.Employees.Commands;
 using ERP.Infrastructure.Data;
 using ERP.Infrastructure.Repositories;
 using ERP.Infrastructure.Services;
 using ERP.WebApi.Core;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +22,8 @@ builder.Services.AddDbContext<ERPDbContext>(options =>
     options.UseSqlServer("name=ConnectionStrings:ERP",
     x => x.MigrationsAssembly("ERP.DbMigrations")));
 
-builder.Services.AddMediatR(typeof(CreateEmployeeCommand).GetTypeInfo().Assembly);
+//builder.Services.AddMediatR(typeof(CreateEmployeeCommand).GetTypeInfo().Assembly);
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateEmployeeCommand).GetTypeInfo().Assembly));
 
 builder.Services.AddScoped(typeof(IBaseRepositoryAsync<>), typeof(BaseRepositoryAsync<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
