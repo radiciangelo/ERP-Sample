@@ -2,12 +2,15 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { HolidayService } from 'src/app/modules/holidays/shared/holiday.service';
 import { LoaderService } from 'src/app/core/services/loader.service';
-import { CalendarOptions, FullCalendarComponent } from '@fullcalendar/angular';
+import { FullCalendarComponent } from '@fullcalendar/angular';
 import { EmployeeService } from 'src/app/modules/employees/shared/employee.service';
 import { environment } from "src/environments/environment";
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 import { DashboardService } from 'src/app/modules/dashboards/shared/dashboard.service';
-
+import { CalendarOptions } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import itLocale from '@fullcalendar/core/locales/it';
+import enLocale from '@fullcalendar/core/locales/en-gb';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './general-dashboard.component.html',
@@ -16,6 +19,7 @@ import { DashboardService } from 'src/app/modules/dashboards/shared/dashboard.se
 export class GeneralDashboardComponent implements OnInit {
   currentYear: number = new Date().getFullYear();
   calendarOptions: CalendarOptions = {
+    plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
     height: 500,
     customButtons: {
@@ -29,7 +33,9 @@ export class GeneralDashboardComponent implements OnInit {
         text: "Today",
         click: this.onTodayClick.bind(this),
       },
-    }
+    },
+    locales: [ itLocale, enLocale ],
+    locale: environment.locale
   };
 
   profilePhotoName: string | null = null;
