@@ -8,6 +8,7 @@ import { AuthenticationService } from 'src/app/core/services/authentication.serv
 import { DashboardService } from 'src/app/modules/dashboards/shared/dashboard.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { GeneralDashboardComponent } from './general-dashboard/general-dashboard.component';
+import { TranslateModule } from '@ngx-translate/core';
 /*
 FullCalendarModule.registerPlugins([
   dayGridPlugin

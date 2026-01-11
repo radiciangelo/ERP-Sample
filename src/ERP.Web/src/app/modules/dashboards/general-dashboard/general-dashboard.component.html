@@ -11,26 +11,26 @@
                 <div class="col-12 md:col-10">
                     <span class="text-900 font-medium text-3xl">{{name}}</span>
                     <div class="mt-3">
-                        <span class="font-medium text-500">Employee Code</span>
+                        <span class="font-medium text-500">{{ 'Employee Code' | translate }}</span>
                         <div class="text-700 mt-2">{{employeeCode}}</div>
                     </div>
                     <div class="mt-3">
-                        <span class="font-medium text-500">Designation</span>
+                        <span class="font-medium text-500">{{ 'Designation' | translate }}</span>
                         <div class="text-700 mt-2">{{designation || '-'}}</div>
                     </div>
                     <div class="mt-3">
-                        <span class="font-medium text-500">Department</span>
+                        <span class="font-medium text-500">{{ 'Department' | translate }}</span>
                         <div class="text-700 mt-2">{{department || "-"}}</div>
                     </div>
                     <div class="mt-3">
-                        <span class="font-medium text-500">Reporting To</span>
+                        <span class="font-medium text-500">{{ 'Reporting To' | translate }}</span>
                         <div class="text-700 mt-2">{{reportingTo || "-"}}</div>
                     </div>
                 </div>
             </div>
         </p-card>
         <p-card>
-            <span class="text-900 font-medium text-3xl">This week birthdays!!!</span>
+            <span class="text-900 font-medium text-3xl">{{ 'This week birthdays' | translate }}!!!</span>
             <p-table [value]="birthdays">
                 <ng-template pTemplate="body" let-emp>
                     <tr>
@@ -41,7 +41,7 @@
                 <ng-template pTemplate="emptymessage">
                     <tr>
                         <td [attr.colspan]="2">
-                            No records found.
+                            {{ 'No records found' | translate }}.
                         </td>
                     </tr>
                 </ng-template>
@@ -52,10 +52,10 @@
         <p-card>
             <full-calendar #calendar [options]="calendarOptions"></full-calendar>
             <div class="mt-2">
-                <div class="calendar-label bg-green-500">Present</div>
-                <div class="calendar-label bg-blue-500">Public Holiday</div>
-                <div class="calendar-label bg-orange-500">Full Day Leave</div>
-                <div class="calendar-label bg-yellow-500">Half Day Leave</div>
+                <div class="calendar-label bg-green-500">{{ 'Present' | translate }}</div>
+                <div class="calendar-label bg-blue-500">{{ 'Public Holiday' | translate }}</div>
+                <div class="calendar-label bg-orange-500">{{ 'Full Day Leave' | translate }}</div>
+                <div class="calendar-label bg-yellow-500">{{ 'Half Day Leave' | translate }}</div>
             </div>
         </p-card>
     </div>

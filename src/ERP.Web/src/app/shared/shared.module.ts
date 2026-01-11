@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ThemeComponent } from './components/theme/theme.component';
 import { PrimeNgModule } from './primeng.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { PrimeNgModule } from './primeng.module';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        PrimeNgModule
+        PrimeNgModule,
+        TranslateModule
     ],
     exports: [
         // angular defined modules which are going to be used in all other lazy loaded modules
@@ -35,7 +37,8 @@ import { PrimeNgModule } from './primeng.module';
         HeaderComponent,
         FooterComponent,
         MenuComponent,
-        ThemeComponent
+        ThemeComponent,
+        TranslateModule
     ]
 })
 export class SharedModule { }
