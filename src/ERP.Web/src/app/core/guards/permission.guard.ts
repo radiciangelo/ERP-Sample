@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { PermissionEnum } from 'src/app/shared/enums/permission.enum';
 import { PermissionService } from 'src/app/core/services/permission.service';
 
 @Injectable()
-export class PermissionGuard implements CanActivate {
+export class PermissionGuard  {
     constructor(
         private router: Router,
         private permissionService: PermissionService
